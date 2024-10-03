@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uğurcan Sevinç</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xterm@4.19.0/css/xterm.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="background-effect"></div>
+    <div id="terminal"></div>
+    <script src="https://cdn.jsdelivr.net/npm/xterm@4.19.0/lib/xterm.js"></script>
+    <script src="terminal.js"></script>
+    <script>
+        const background = document.getElementById('background-effect');
+        const numberOfLines = 125;
+    
+        for (let i = 0; i < numberOfLines; i++) {
+            const line = document.createElement('div');
+            line.classList.add('line');
+            line.style.left = `${Math.random() * 100}vw`;
+    
+            const depth = Math.floor(Math.random() * 3) + 1;
+            line.classList.add(`depth-${depth}`);
+    
+            const direction = Math.random() > 0.5 ? 'fade-in-left' : 'fade-in-right';
+            line.style.animationName = direction;
+    
+            line.style.animationDelay = `${Math.random() * 5}s`;
+    
+            background.appendChild(line);
+    
+            const flare = document.createElement('div');
+            flare.classList.add('light-flare');
+            flare.style.left = `${Math.random() * 100}vw`;
+            flare.style.animationDelay = `${Math.random() * 5}s`;
+            background.appendChild(flare);
+        }
+    </script>
+    
+    
+    
+    
+</body>
+</html>
