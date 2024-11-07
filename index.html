@@ -14,29 +14,29 @@
     <script src="terminal.js"></script>
     <script>
         const background = document.getElementById('background-effect');
-        const numberOfLines = 125;
-    
-        for (let i = 0; i < numberOfLines; i++) {
-            const line = document.createElement('div');
-            line.classList.add('line');
-            line.style.left = `${Math.random() * 100}vw`;
-    
-            const depth = Math.floor(Math.random() * 3) + 1;
-            line.classList.add(`depth-${depth}`);
-    
-            const direction = Math.random() > 0.5 ? 'fade-in-left' : 'fade-in-right';
-            line.style.animationName = direction;
-    
-            line.style.animationDelay = `${Math.random() * 5}s`;
-    
-            background.appendChild(line);
-    
-            const flare = document.createElement('div');
-            flare.classList.add('light-flare');
-            flare.style.left = `${Math.random() * 100}vw`;
-            flare.style.animationDelay = `${Math.random() * 5}s`;
-            background.appendChild(flare);
-        }
+const numberOfLines = 75; // Çizgi sayısını azalttık
+
+for (let i = 0; i < numberOfLines; i++) {
+    const line = document.createElement('div');
+    line.classList.add('line');
+    line.style.left = `${Math.random() * 100}vw`;
+
+    const depth = Math.floor(Math.random() * 3) + 1;
+    line.classList.add(`depth-${depth}`);
+
+    const direction = Math.random() > 0.5 ? 'fade-in-left' : 'fade-in-right';
+    line.style.animationName = direction;
+
+    line.style.animationDelay = `${Math.random() * 5}s`;
+
+    background.appendChild(line);
+
+    const flare = document.createElement('div');
+    flare.classList.add('light-flare');
+    flare.style.left = `${Math.random() * 100}vw`;
+    flare.style.animationDelay = `${Math.random() * 5}s`;
+    background.appendChild(flare);
+}
     </script>
     
     
